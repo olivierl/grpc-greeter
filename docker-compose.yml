@@ -3,7 +3,7 @@ version: '3'
 services:
 
   server:
-    image: grpc-greeter:${TAG:-latest}
+    image: grpc-greeter:alpine
     build:
       dockerfile: GrpcGreeter/Dockerfile
       context: .
@@ -15,7 +15,7 @@ services:
       - ASPNETCORE_URLS=http://+:80
 
   worker:
-    image: grpc-greeter-worker:${TAG:-latest}
+    image: grpc-greeter-worker:alpine
     build:
       dockerfile: GrpcGreeterWorker/Dockerfile
       context: .
